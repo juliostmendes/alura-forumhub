@@ -7,14 +7,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Table(name = "topicos")
 @Entity(name = "topico")
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+//@Getter
+//@NoArgsConstructor
+//@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Topico {
 
@@ -41,6 +39,16 @@ public class Topico {
     }
 
     public Topico() {
+    }
+
+    public Topico(Long id, String titulo, String mensagem, LocalDate dataCriacao, EnumStatus status, String autor, String curso) {
+        this.id = id;
+        this.titulo = titulo;
+        this.mensagem = mensagem;
+        this.dataCriacao = dataCriacao;
+        this.status = status;
+        this.autor = autor;
+        this.curso = curso;
     }
 
     public void atualizarInformacoes(DadosAtualizacaoTopico dados){
